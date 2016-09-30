@@ -1,6 +1,7 @@
 package com.raghu.webservice.restful.test;
 import com.raghu.webservice.restful.dbservices.*;
 
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -15,9 +16,9 @@ public class TestClass {
 	@Path("/hello")
 	@GET
 	public String hello() {
-		DbConnection dBConn = new DbConnection();
-		dBConn.dbConnect();
-				
+		DbServices dbServ = new DbServices();
+		String str = dbServ.getRecords();
+		System.out.println(str);
 		return "Hello World!";
 	}
 	
